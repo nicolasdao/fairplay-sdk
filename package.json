@@ -1,0 +1,44 @@
+{
+  "name": "fairplay-sdk",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.min.js",
+  "unpkg": "dist/index.min.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolasdao/fairplay-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nicolasdao/fairplay-sdk/issues"
+  },
+  "homepage": "https://github.com/nicolasdao/fairplay-sdk#readme",
+  "scripts": {
+    "build": "rm -rf dist/ && WEBPACK_ENV=dev webpack && WEBPACK_ENV=build webpack",
+    "lint": "eslint index.js src/ test/ --fix",
+    "push": "git push --follow-tags origin master && npm publish",
+    "rls": "standard-version --release-as",
+    "test": "mocha",
+    "v": "node -e \"console.log(require('./package.json').version)\""
+  },
+  "author": "Nicolas Dao",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "acorn": "^6.1.1",
+    "babel-loader": "^8.0.5",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "standard-version": "^4.4.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "core-async": "^0.1.1"
+  }
+}

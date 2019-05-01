@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const env = process.env.WEBPACK_ENV
 
 // Simply configure those 4 variables:
-const JS_SOURCE_FILES = ['./index.js']
+const JS_SOURCE_FILES = ['babel-polyfill', './index.js']
 const OUTPUT_FILENAME = 'index'
 const DEST_FOLDER = 'dist'
 const COPYRIGHT = `

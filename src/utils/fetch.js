@@ -123,6 +123,8 @@ const fetch = {
 	patch: ({ uri, headers, body }) => _fetchMethod({ uri, method:'PATCH', headers, body })
 }
 
-module.exports = {
-	fetch
-}
+module.exports = fetch
+
+
+
+

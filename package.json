@@ -16,10 +16,12 @@
   },
   "homepage": "https://github.com/nicolasdao/fairplay-sdk#readme",
   "scripts": {
-    "build": "rm -rf dist/ && WEBPACK_ENV=dev webpack && WEBPACK_ENV=build webpack",
+    "build": "WEBPACK_ENV=build webpack",
+    "dev": "WEBPACK_ENV=dev webpack",
     "lint": "eslint index.js src/ test/ --fix",
     "push": "git push --follow-tags origin master && npm publish",
     "rls": "standard-version --release-as",
+    "start": "node testserver.js",
     "test": "mocha",
     "v": "node -e \"console.log(require('./package.json').version)\""
   },
@@ -28,8 +30,10 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@neap/funky": "^0.5.0",
     "acorn": "^6.1.1",
     "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "mocha": "^5.2.0",
@@ -39,6 +43,7 @@
   },
   "dependencies": {
     "co": "^4.6.0",
-    "core-async": "^0.1.1"
+    "core-async": "^0.1.1",
+    "randombytes": "^2.1.0"
   }
 }

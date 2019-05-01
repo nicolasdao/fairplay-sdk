@@ -7,6 +7,7 @@ __*Fairplay SDK*__ which does heaps of cool stuff.
 > * [How To Use It](#how-to-use-it) 
 >   - [Basic](#basic)
 >   - [Config](#config)
+> * [Dev & Contribution](#dev--contribution)
 > * [FAQ](#faq)
 > * [About Neap](#this-is-what-we-re-up-to)
 > * [License](#license)
@@ -16,6 +17,38 @@ __*Fairplay SDK*__ which does heaps of cool stuff.
 
 
 # How To Use It
+
+# Dev & Contribution
+
+To test or contribute to this project:
+
+#### Step 1. Clone this project:
+
+```
+git clone https://github.com/nicolasdao/fairplay-sdk.git
+```
+
+#### Step 2. Install all depedencies:
+
+```
+npm i
+```
+
+#### Step 3. Build the SDK locally
+
+```
+npm run build
+```
+
+This uses Babel+Webpack to convert the ES6 code to a minified JS `index.min.js`. This minified file is added under a new `dist` folder.  
+
+#### Step 4. Test it is working
+
+```
+npm start
+```
+
+This starts a server on port 3000. The dummy HTML page uses the `dist/index.min.js` file built in step 3.
 
 
 # FAQ

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+	<button id="edit" type="button">Edit</button>
+	<button id="save" type="button">Save</button>
+	<script src="/dist/index.min.js"></script>
+	<script type="text/javascript">
+		var fp = new Fairplay({
+			editContent:data => console.log('EDIT: ', data.content),
+			saveContent:data => console.log('SAVE: ', data.pathname),
+		})
+		
+		fp.content.on('edited', transId => console.log(transId))
+		fp.content.on('saved', transId => console.log(transId))
+
+		var editCounter = 0
+		var saveCounter = 0
+		document.getElementById('edit').addEventListener('click', () => {
+			//console.log('Edit')
+			fp.content.edit({ id:'hello', content:`hello world #${++editCounter}` })
+		})
+		document.getElementById('save').addEventListener('click', () => {
+			//console.log('Save')
+			fp.content.save({ pathname:`#${++saveCounter}` })
+		})
+	</script>
+</body>
+</html>
